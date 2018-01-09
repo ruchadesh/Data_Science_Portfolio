@@ -5,5 +5,5 @@ These are some of the data science projects I got the opportunity to work on dur
 
 ## 1. [Employee Churn Prediction (Human Resources Analytics)(https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Employee_Churn_Prediction):
 
-[sample] (https://www.linkedin.com/feed/) 
+[sample](https://www.linkedin.com/feed/) 
   
