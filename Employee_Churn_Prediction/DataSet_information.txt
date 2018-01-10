@@ -1,0 +1,3 @@
+- The dataset used for this project is taken from Kaggle competition. 
+- It consists of total 18 variables (columns) and 14999 data rows. 
+- 
