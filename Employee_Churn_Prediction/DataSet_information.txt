@@ -1,3 +1,10 @@
-- The dataset used for this project is taken from Kaggle competition. 
-- It consists of total 18 variables (columns) and 14999 data rows. 
-- 
+  The dataset used for this project is taken from Kaggle competition. 
+  It consists of total 18 variables (columns) and 14999 data rows. 
+  
+  Dependent variable  : left 
+					            : determines whether particular employee has left the company or not 
+                      : has discrete values ( 0 – did not leave the company , 1 – left the company ) 
+
+  Independent variables :  These variables give the information of the factors affecting the employee churn such as Last Evaluation ,  
+                           Number of projects,Average monthly hours , time spent at the company , Whether they have had a work accident,  
+                           whether they have had a promotion in the last 5 years , Department,etc. 
