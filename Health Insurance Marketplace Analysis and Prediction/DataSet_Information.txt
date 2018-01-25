@@ -1,0 +1,10 @@
+The dataset consists data of various health insurance plans collected and managed by www.healthinsurance.gov
+All the Attributes that are used in the training of the model is as follows:
+	State Code: Code for every state in the country
+	FIPS County Code: IT is the Federal Information Processing Standard Code 	for a county
+	County Name: Name of the county where the insurance is being offered 
+	Plan ID (Standard Component): Unique ID of the plan
+	Plan Type: it Contains information about the plan type and provider 	network. 
+	Rating Area: Geographic ratings that the health insurance provides 	should use. 
+	Child Only Offering- binary: whether benefits for child are included or 	not.  
+
