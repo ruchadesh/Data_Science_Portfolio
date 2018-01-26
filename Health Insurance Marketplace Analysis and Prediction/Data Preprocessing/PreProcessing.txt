@@ -3,6 +3,8 @@
   For the column , Child Dental and Adult Dental, the nominal data values are interpreted as binary values as shown in the image (   
   PreProcessing.png) 
   
-- In a similar way, Child Only offering , meaning of binary values is as follows : 
+- In a similar way, for the column ,Child Only offering , meaning of binary values is as follows : 
   
+  0 : allows adult only 
+  1 : allows adult and child only 
 
