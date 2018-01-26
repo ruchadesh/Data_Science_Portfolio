@@ -1,1 +1,8 @@
-dd
+
+- Whether a plan includes the Dental coverage or not, plays an important role while predicting plan type
+  For the column , Child Dental and Adult Dental, the nominal data values are interpreted as binary values as shown in the image (   
+  PreProcessing.png) 
+  
+- In a similar way, Child Only offering , meaning of binary values is as follows : 
+  
+
