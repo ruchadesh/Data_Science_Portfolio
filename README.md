@@ -21,6 +21,7 @@ These are some of the data science projects I got the opportunity to work on dur
 - This projectc helps the customers to select a suitable metal plan category according to their needs. 
 
 ## [Kaggle competition- Titanic Survival]
+(https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Titanic_Survival) :
 
 - The wreck of the RMS Titanic was one of the worst shipwrecks in history, and is certainly the most well-known.  On April 15, 1912,     during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew.  This   
   sensational tragedy shocked the international community and lead to better safety regulations for ships.
