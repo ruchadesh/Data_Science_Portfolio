@@ -29,6 +29,12 @@ These are some of the data science projects I got the opportunity to work on dur
 
 - This contest code includes the analysis of what sorts of people were likely to survive.  
 
+## [Walmart Sales forecasting](https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Walmart_Sales_forecasting) :
+
+- It contains historical sales data for 45 Walmart stores located in different regions. Each store contains a number of departments, and you are tasked with predicting the department-wide sales for each store.
+
+-  In addition, Walmart runs several promotional markdown events throughout the year. These markdowns precede prominent holidays, the four largest of which are the Super Bowl, Labor Day, Thanksgiving, and Christmas. The weeks including these holidays are weighted five times higher in the evaluation than non-holiday weeks.
+
 ## [Credit Card Fraud Detection](https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Credit%20Card%20Fraud%20Detection):
 -  The datasets contains credit card transactions over a two day collection period in September 2013 by European cardholders. There are a total of 284,807 transactions, of which 492 (0.172%) are fraudulent.
 
