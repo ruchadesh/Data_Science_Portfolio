@@ -29,7 +29,7 @@ These are some of the data science projects I got the opportunity to work on dur
 
 - This contest code includes the analysis of what sorts of people were likely to survive.  
 
-##[Credit Card Fraud Detection](https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Credit%20Card%20Fraud%20Detection):
+## [Credit Card Fraud Detection](https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Credit%20Card%20Fraud%20Detection):
 -  The datasets contains credit card transactions over a two day collection period in September 2013 by European cardholders. There are a total of 284,807 transactions, of which 492 (0.172%) are fraudulent.
 
 The dataset contains numerical variables that are the result of a principal components analysis (PCA) transformation. This transformation was applied by the original authors to maintain confidentiality of sensitive information. Additionally the dataset contains Time and Amount, which were not transformed by PCA. The Time variable contains the seconds elapsed between each transaction and the first transaction in the dataset. The Amount variable is the transaction amount, this feature can be used for example-dependant cost-senstive learning. The Class variable is the response variable and indicates whether the transaction was fraudulant.
