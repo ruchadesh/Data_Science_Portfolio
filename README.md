@@ -3,6 +3,8 @@
 # **Academic Data Science Projects**
 These are some of the data science projects I got the opportunity to work on during my Masters course. I worked on this projects using R Studio and Python. 
 
+## [Bank-Marketing Data Analysis and Prediction]
+
 ## [Employee Churn Prediction (HR Analytics)](https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Employee_Churn_Prediction):
 
 - People analytics can help to assess the effectiveness of people practices, programs, and processes. 
