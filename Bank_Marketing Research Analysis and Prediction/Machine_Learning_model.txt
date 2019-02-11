@@ -126,3 +126,177 @@ In [8]:
 dataset.describe()
 
 
+# scatter plot matrix
+scatter_matrix(dataset)
+plt.show()
+
+# age
+sns.boxplot(x='is_success', y='age', data=dataset)
+
+sns.boxplot(x='is_success', y='balance', data=dataset)
+
+
+# Fixing balance column
+dataset_new = dataset
+min_val = dataset_new["balance"].min()
+max_val = 20000
+dataset_new = impute_outliers(df=dataset_new, column='balance' , minimum=min_val, maximum=max_val)
+
+sns.boxplot(x='is_success', y='day', data=dataset)
+
+sns.boxplot(x='is_success', y='duration', data=dataset)
+
+# Fixing duration column
+min_val = dataset_new["duration"].min()
+max_val = 2000
+dataset_new = impute_outliers(df=dataset_new, column='duration' , minimum=min_val, maximum=max_val)
+
+
+
+Analysis of Indepedent Categorical Variables:
+
+# Impute unknowns function
+def impute_unknowns(df, column):
+    col_values = df[column].values
+    df[column] = np.where(col_values=='unknown', dataset[column].mode(), col_values)
+    return df
+# job
+temp1 = pd.crosstab(dataset['job'], dataset['is_success'])
+temp1.plot(kind='bar')
+print(dataset.groupby(['job']).size()/len(dataset)*100)
+
+
+# marital
+temp2 = pd.crosstab(dataset['marital'], dataset['is_success'])
+temp2.plot(kind='bar')
+print(dataset.groupby(['marital']).size()/len(dataset)*100)
+marital
+divorced    11.517109
+married     60.193316
+single      28.289576
+dtype: float64
+
+. Feature Engineering
+In [39]:
+#Seperating Target variable from other variables
+dataset_Y = dataset_new['is_success']
+dataset_X = dataset_new[dataset_new.columns[0:12]]
+In [40]:
+#converting Independent Categorical into Numeriacal by creating Dummy variables
+dataset_X_dummy = pd.get_dummies(dataset_X)
+print(dataset_X_dummy.head())
+
+4. Feature Selection with PCA
+In [41]:
+#converting dataframe into numpy Array
+X = dataset_X_dummy.values
+Y = dataset_Y.values
+
+# Split-out validation dataset
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+In [42]:
+#Scaling the values
+X_t = scale(X_train)
+
+#initially lets create 39 components which is actual number of Variables we have
+pca = PCA(n_components=39)
+
+pca.fit(X_t)
+
+#The amount of variance that each PC explains
+var= pca.explained_variance_ratio_
+
+#Cumulative Variance explains
+var1=np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)
+In [43]:
+#lets see Cumulative Variance plot
+plt.plot(var1)
+Out[43]:
+[<matplotlib.lines.Line2D at 0xcf36860>]
+
+From Cumulative Variance plot we can find that first 32 components are explaining nearly 100% variability of actual data.
+
+
+pca = PCA(n_components=32)
+pca.fit(X_t)
+X_train_PC=pca.fit_transform(X_t)
+
+5. Model Training
+In [45]:
+# Test options and evaluation metric
+seed = 7
+scoring = 'accuracy'
+Implementing Logistic Regression(LR), Linear Discriminant Analysis(LDA), K-Nearest Neighbor(K-NN), Decision Tree(CART), Naive Bayes(NB) and Support Vector Machine(SVM).
+In [46]:
+# Spot Check Algorithms
+models = []
+models.append(('LR', LogisticRegression()))
+models.append(('LDA', LinearDiscriminantAnalysis()))
+models.append(('K-NN', KNeighborsClassifier()))
+models.append(('CART', DecisionTreeClassifier()))
+models.append(('NB', GaussianNB()))
+models.append(('SVM', SVC()))
+In [47]:
+# evaluate each model in turn
+results = []
+names = []
+for name, model in models:
+    kfold = model_selection.KFold(n_splits=10, random_state=seed)
+    cv_results = model_selection.cross_val_score(model, X_train_PC, Y_train, cv=kfold, scoring=scoring)
+    results.append(cv_results)
+    names.append(name)
+    msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+    print(msg)
+LR: 0.891755 (0.005013)
+LDA: 0.891202 (0.004555)
+K-NN: 0.883958 (0.004866)
+CART: 0.854734 (0.005656)
+NB: 0.859241 (0.004832)
+SVM: 0.893553 (0.005163)
+"Support Vector Machine" has highest Accuracy but it is taking more time compare to other algorithms for Training.
+"Logistic Regression" is also has nearly same accuracy and it is very faster than SVM.
+6. Model Selection
+In [48]:
+# Comparing Algorithms
+fig = plt.figure()
+fig.suptitle('Algorithm Comparison')
+ax = fig.add_subplot(111)
+plt.boxplot(results)
+ax.set_xticklabels(names)
+Out[48]:
+[<matplotlib.text.Text at 0x1085cac8>,
+ <matplotlib.text.Text at 0x1084e780>,
+ <matplotlib.text.Text at 0x10591198>,
+ <matplotlib.text.Text at 0x105917f0>,
+ <matplotlib.text.Text at 0x10591e48>,
+ <matplotlib.text.Text at 0x105744e0>]
+
+According to Accuracy and Computation Time Logistic Regression seems the best model.
+7. Making Prediction
+In [49]:
+#Scaling the X_validation data
+X_v = scale(X_validation)
+
+pca.fit(X_v)
+X_validation_PC=pca.fit_transform(X_v)
+In [50]:
+# Make predictions on validation dataset by choosing best Algorithm
+lr = LogisticRegression()
+lr.fit(X_train_PC, Y_train)
+predictions = lr.predict(X_validation_PC)
+print("Accuracy : ", accuracy_score(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions))
+print(classification_report(Y_validation, predictions))
+('Accuracy : ', 0.88289284529470313)
+[[7744  283]
+ [ 776  240]]
+             precision    recall  f1-score   support
+
+         no       0.91      0.96      0.94      8027
+        yes       0.46      0.24      0.31      1016
+
+avg / total       0.86      0.88      0.87      9043
+
+Main challenge in this model was Exploratary Data Analysis on Unbalaced Data.
