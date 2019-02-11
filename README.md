@@ -3,6 +3,11 @@
 # ** Data Science Projects**
 These are some of the data science projects I got the opportunity to work on during my Masters course. I worked on this projects using R Studio and Python. 
 
+## [Text Mining (Sentiment Analysis)]
+(https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Text%20Mining%20(Sentiment%20Analysis)):
+
+
+
 ## [Bank Marketing data analysis and Prediction]
 (https://github.com/ruchadesh/Data_Science_Portfolio/tree/master/Bank_Marketing%20Research%20Analysis%20and%20Prediction):
 
