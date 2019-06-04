@@ -25,6 +25,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestRegressor
+
 In [2]:
 # Load dataset
 url = "C:/Users/rucha/Desktop/bank.csv"
@@ -238,6 +240,7 @@ models.append(('K-NN', KNeighborsClassifier()))
 models.append(('CART', DecisionTreeClassifier()))
 models.append(('NB', GaussianNB()))
 models.append(('SVM', SVC()))
+models.append(('RandomForest',RandomForestRegressor()))
 In [47]:
 # evaluate each model in turn
 results = []
@@ -255,6 +258,7 @@ K-NN: 0.883958 (0.004866)
 CART: 0.854734 (0.005656)
 NB: 0.859241 (0.004832)
 SVM: 0.893553 (0.005163)
+RandomForest: 0.885432 (0.005324)
 "Support Vector Machine" has highest Accuracy but it is taking more time compare to other algorithms for Training.
 "Logistic Regression" is also has nearly same accuracy and it is very faster than SVM.
 6. Model Selection
