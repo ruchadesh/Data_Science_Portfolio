@@ -1,6 +1,6 @@
 Introduction: 
 Source: Kaggle dataset 
---Background: 
+Background: 
  I was very much interested in working on credit card transaction as the data itself is very challenging. As we all know, credit card fraud is a serious problem in digital ecommerce. Because we don’t want our customer to pay for which they haven't even bought. Vast majority of transactions are legitimate. Hence, these transactions reduce the model’s sensitivity to fraud. 
 
 Gathering data:
@@ -33,7 +33,9 @@ How to handle imbalanced dataset:
 3.	Change the prediction thresholds 
 other classifiers, such as logistic regression, are capable of giving a probabilistic output (I.e. the chance that a given observation belongs to the positive class). For these classifiers, we can specify the probability threshold by which above that amount we'll predict the observation belongs to the positive class. If we set a very low value for this probability threshold, we can increase our True Positive Rate as we'll be more likely to capture all of the positive observations.
 4.	Assign weights – assign different weights for the minority ad majority classes 
-Here we will do two things:
+
+
+I have applied following methods:
 1.	Use Logistic Regression directly to model the data;
 2.	Over-sampling the data to get a balanced proportion of positive/negative values
 3.	Change the performance metric, like using ROC, f1-score rather than using accuracy
