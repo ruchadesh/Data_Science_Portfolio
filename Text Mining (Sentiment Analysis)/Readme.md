@@ -28,7 +28,6 @@ Restaurant_Reviews.tsv is a dataset from Kaggle datasets which consists of 1000 
                                     3. Lemmatization
                                     4. Converted al l text to lower case
                                     5. Create a corpus containign clean words
-- Tokenziation: Converted each word in a corps into a token
 - Vectorization: Created a sparse matrix for 1500 features to represent the number of occurence of each word in a corpus adn created a                    bag of words
 - Prediction model: Built a random forest algorithm to predict the category of a review- positive/negative, compared the results with  
                     actual ratings with an accuracy of 67%
