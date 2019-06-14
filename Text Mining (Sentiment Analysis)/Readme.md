@@ -30,7 +30,7 @@ Restaurant_Reviews.tsv is a dataset from Kaggle datasets which consists of 1000 
                                     5. Create a corpus containign clean words
 - Vectorization: Created a sparse matrix for 1500 features to represent the number of occurence of each word in a corpus adn created a                    bag of words
 - Prediction model: Built a random forest algorithm to predict the category of a review- positive/negative, compared the results with  
-                    actual ratings with an accuracy of 67%
+                    actual ratings with an accuracy of 77%
                     ( Dependent variable: Sparse matrix for words
                       Independent variable: Review rating category) 
       
