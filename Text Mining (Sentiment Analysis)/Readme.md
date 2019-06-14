@@ -23,11 +23,12 @@ Restaurant_Reviews.tsv is a dataset from Kaggle datasets which consists of 1000 
 ### To build a model to predict if review is positive or negative, following steps are performed.
 
 - Data Gathering: Imported the dataset into Python jupyter notebook with Pandas library
-- Text cleaning and pre-processing: 1. Removed Punctualtion and numbers from reviews by sleecting only text format using Regex
-                                    2. Removed stopwords
-                                    3. Lemmatization
-                                    4. Converted al l text to lower case
-                                    5. Create a corpus containign clean words
+- Text cleaning and pre-processing: 
+1. Removed Punctualtion and numbers from reviews by sleecting only text format using Regex
+2. Removed stopwords
+3. Lemmatization
+4. Converted al l text to lower case
+5. Create a corpus containign clean words
 - Vectorization: Created a sparse matrix for 1500 features to represent the number of occurence of each word in a corpus adn created a                    bag of words
 - Prediction model: Built a random forest algorithm to predict the category of a review- positive/negative, compared the results with  
                     actual ratings with an accuracy of 77%
